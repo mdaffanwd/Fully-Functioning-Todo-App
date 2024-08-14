@@ -122,6 +122,9 @@ img:hover {
   padding: 0.5rem 1rem;
   box-shadow: 0 0 20px 0 var(--lt-drk-gr-blue);
 }
+input[type="date"] {
+  max-width: 100%;
+}
 .form-container input,
 button {
   font-size: 1.2rem;
@@ -245,7 +248,7 @@ button {
 }
 
 .attribution {
-  margin-top: auto; 
+  margin-top: auto;
   font-size: 1rem;
   width: 100%;
   color: var(--lt-drk-gr-blue);
@@ -293,8 +296,6 @@ body.dark .attribution a {
 /* ======================= */
 /* ======================= */
 
-
-
 @media (450px < width < 750px) {
   .main-container {
     min-width: 90%;
@@ -319,7 +320,7 @@ body.dark .attribution a {
   body.dark .background {
     background-image: url(images/bg-mobile-dark.jpg);
   }
-  body.dark .form-container form button{
+  body.dark .form-container form button {
     background-color: white;
   }
   body.dark .mobile-footer {
