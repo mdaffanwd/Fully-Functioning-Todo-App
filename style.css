@@ -1,0 +1,326 @@
+:root {
+  /* primary clrs */
+  --clr-brt-blue: hsl(220, 98%, 61%);
+  --check-bg: linear-gradient hsl(192, 100%, 67%) to hsl(280, 87%, 65%);
+  --clr-white: #fff;
+
+  /* LightTheme Colors */
+  --lt-lt-gray: hsl(0, 0%, 98%);
+  --lt-lt-gr-blue: hsl(236, 33%, 92%);
+  --lt-gr-blue: hsl(233, 11%, 84%);
+  --lt-drk-gr-blue: hsl(236, 9%, 61%);
+  --lt-v-drk-gr-blue: hsl(235, 19%, 35%);
+
+  /* DarkTheme Colors */
+  --dt-v-drk-blue: hsl(235, 21%, 11%);
+  --dt-v-drk-desat-blue: hsl(235, 24%, 19%);
+  --dt-lt-gr-blue: hsl(234, 39%, 85%);
+  --dt-lt-gr-blue-hvr: hsl(236, 33%, 92%); /* hover */
+  --dt-drk-gr-blue: hsl(234, 11%, 52%);
+  --dt-v-drk-gr-blue: hsl(233, 14%, 35%);
+  --dt-v-drk-gr-blue2: hsl(237, 14%, 26%);
+}
+
+/* ======================= */
+/*     CSS Resset          */
+/* ======================= */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+ul li {
+  list-style: none;
+}
+
+input,
+button {
+  font-family: inherit;
+}
+button:hover,
+label:hover,
+img:hover {
+  cursor: pointer;
+}
+
+/* ======================= */
+/*      utilities          */
+/* ======================= */
+.flex {
+  display: flex;
+  align-items: center;
+}
+.hidden {
+  display: none;
+}
+.none {
+  display: none !important;
+}
+.none {
+  display: none;
+  height: 0;
+  width: 0;
+}
+.btn {
+  margin-block: 0;
+  margin-inline-end: 0.6rem;
+  padding: 0.8rem 1.8rem;
+  cursor: pointer;
+  border: 2px solid var(--dt-v-drk-gr-blue);
+  border-radius: 20px;
+}
+/* ///////////////////////////////// */
+/* ///////////////////////////////// */
+
+/*     CSS starts Here     */
+
+/* ///////////////////////////////// */
+/* ///////////////////////////////// */
+.background {
+  position: absolute;
+  top: 0;
+  background: url("images/bg-desktop-light.jpg") no-repeat;
+  background-size: cover;
+  width: 100vw;
+  height: 40vh;
+  z-index: -1;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 85svh;
+  width: 60%;
+  margin-top: 5%;
+  margin-inline: auto;
+}
+.header {
+  justify-content: space-between;
+}
+.header > * {
+  cursor: pointer;
+}
+.logo {
+  color: var(--clr-white);
+  letter-spacing: 0.6rem;
+}
+
+/* ======================= */
+/*     Form Styles          */
+/* ======================= */
+
+.form-container {
+  position: relative;
+  background-color: var(--clr-white);
+  overflow: hidden;
+  border-radius: 10px;
+  padding: 0.5rem 1rem;
+  box-shadow: 0 0 20px 0 var(--lt-drk-gr-blue);
+}
+.form-container input,
+button {
+  font-size: 1.2rem;
+  width: 100%;
+  padding: 1rem;
+  margin-block: 0.4rem;
+  outline: none;
+  border-radius: 0.8rem;
+}
+.form-container button {
+  font-size: 1rem;
+  width: 100%;
+  padding: 1em 0;
+  background-color: var(--lt-lt-gr-blue);
+  color: var(--lt-v-drk-gr-blue);
+}
+
+/* ============================= */
+/* Todo-list-container Styles Starts Here    */
+/* ============================= */
+.todo-list-container {
+  /* flex-grow: 1; */
+  overflow: hidden;
+  background-color: var(--clr-white);
+  border-radius: 10px;
+  margin-top: 5%;
+  box-shadow: 0 0 10px 0 var(--lt-drk-gr-blue);
+  transition: all 0.2s ease-in-out;
+}
+
+/* ============================= */
+/* Todo-list UL  Styles Starts Here */
+/* ============================= */
+.todo-list {
+  padding: unset;
+  margin: unset;
+}
+.round {
+  height: 22px;
+  width: 22px;
+  margin-bottom: 4px;
+  border-radius: 50%;
+  border: 2px solid var(--dt-lt-gr-blue);
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-inline-end: 0.8rem;
+}
+
+/* ============================= */
+/* Todo-list LI  Styles Starts Here    */
+/* ============================= */
+.list-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  border-bottom: 1px solid var(--dt-lt-gr-blue);
+  /* transition: all .2s ease-in-out; */
+}
+
+.list-item:hover .round {
+  border: 2px solid var(--clr-brt-blue);
+}
+
+.list-item.completed .todo-details p {
+  text-decoration: line-through;
+  color: var(--lt-drk-gr-blue);
+}
+
+.list-item.completed .round {
+  background-image: url("images/icon-check.svg"),
+    linear-gradient(to right, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+}
+
+/* Dragging effect */
+/* .todo-list-container:has(.list-item.dragging) {
+  opacity: 0.8;
+}
+  */
+.list-item.dragging {
+  opacity: 0;
+}
+
+.list-item:hover img.hidden {
+  display: block;
+  transition: all 0.3s ease-in-out;
+}
+
+.todo-details > * {
+  margin-block: 0;
+  padding-block: 0.2rem;
+}
+.list-item.completed .edit-btn {
+  display: none;
+}
+/* ============================= */
+/*  Footer Styles Starts Here    */
+/* ============================= */
+.desktop-footer {
+  justify-content: space-between;
+  padding: 0 1rem;
+  color: var(--lt-drk-gr-blue);
+}
+
+.desktop-footer > * {
+  cursor: pointer;
+}
+.filters input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.filters label:hover,
+.filters label input[type="radio"]:checked + span {
+  /* color:  red; */
+  color: var(--clr-brt-blue);
+}
+
+.drag {
+  color: var(--lt-drk-gr-blue);
+  text-align: center;
+}
+
+.attribution {
+  margin-top: auto; 
+  font-size: 1rem;
+  width: 100%;
+  color: var(--lt-drk-gr-blue);
+  text-align: center;
+  bottom: -44vh;
+}
+
+/* ======================= */
+/* ======================= */
+/*     Dark Mode Styles    */
+/* ======================= */
+/* ======================= */
+
+body.dark {
+  background-color: var(--dt-v-drk-blue);
+  /* background-color: var(--dt-v-drk-desat-blue); */
+}
+body.dark .form-container,
+body.dark .todo-list-container,
+body.dark .desktop-footer {
+  background-color: var(--dt-v-drk-blue);
+  color: var(--clr-white);
+  box-shadow: 0 0 10px 0 var(--lt-drk-gr-blue);
+}
+body.dark .form-container input,
+body.dark .form-container button {
+  background-color: var(--dt-v-drk-gr-blue);
+  color: var(--clr-white);
+  border: none;
+}
+body.dark .desktop-footer {
+  color: var(--lt-drk-gr-blue);
+}
+
+body.dark .background {
+  background-image: url("images/bg-desktop-dark.jpg");
+}
+body.dark .attribution a {
+  color: var(--clr-brt-blue);
+}
+
+/* ======================= */
+/* ======================= */
+/*   Media Query Styles    */
+/* ======================= */
+/* ======================= */
+
+@media (350px < width < 750px) {
+  .main-container {
+    min-width: 80%;
+  }
+  .background {
+    background-image: url(images/bg-mobile-light.jpg);
+  }
+  .desktop-footer .filters {
+    display: none;
+  }
+  .mobile-footer {
+    display: block;
+    background-color: var(--clr-white);
+    color: var(--lt-drk-gr-blue);
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 5%;
+    padding: 0.8rem 0;
+    box-shadow: 0 0 10px 0 var(--lt-drk-gr-blue);
+  }
+  /* For Dark mode */
+  body.dark .background {
+    background-image: url(images/bg-mobile-dark.jpg);
+  }
+  body.dark .form-container form button{
+    background-color: white;
+  }
+  body.dark .mobile-footer {
+    background-color: var(--dt-v-drk-blue);
+  }
+}

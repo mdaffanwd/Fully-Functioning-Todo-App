@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <title>Frontend Mentor | Todo app</title>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- JS Links -->
+    <script defer src="js/index.js"></script>
+    <script defer src="js/toggleTheme.js"></script>
+    <script defer src="js/dragNdrop.js"></script>
+  </head>
+
+  <body class="">
+    <div class="background"></div>
+    <div class="main-container">
+      <header class="header flex">
+        <div>
+          <h1 class="logo">TODO</h1>
+        </div>
+        <div class="theme-switch-btns">
+          <img
+            class="dark-theme-btn theme-btn"
+            src="images/icon-moon.svg"
+            alt=""
+          />
+          <img
+            class="light-theme-btn hidden"
+            src="images/icon-sun.svg"
+            alt=""
+          />
+        </div>
+      </header>
+
+      <div class="form-container">
+        <form class="todo-form">
+          <input
+            type="text"
+            placeholder="Create a new todo..."
+            class="todo-text-input"
+          />
+          <input
+            type="text"
+            placeholder="Write a Description"
+            class="todo-desc-input"
+          />
+          <input type="date" class="todo-date-input" />
+          <button type="submit">Add Todo</button>
+        </form>
+      </div>
+
+      <div class="todo-list-container">
+        <ul class="todo-list">
+          <!-- <li class="list-item flex">
+            <div class="flex">
+              <div class="round"></div>
+              <div class="todo-details">
+                <p class="todo-text">Content</p>
+                <p class="todo-description">Description:</p>
+                <p class="due-date">Due Date:</p>
+              </div>
+            </div>
+
+            <div class="delete-edit flex">
+              <div class="edit-container">
+                <p class="edit-btn btn">Edit</p>
+              </div>
+              <img class="todo-img delete-btn" src="images/icon-cross.svg" />
+            </div>
+          </li> -->
+        </ul>
+
+        <!-- <div class="footer"> -->
+        <div class="desktop-footer footer flex">
+          <p><span class="todo-count"></span><span> items left</span></p>
+          <div class="filters">
+            <label>
+              <input type="radio" name="filter" id="all" checked /><span
+                class="all-filter"
+                >All</span
+              >
+            </label>
+
+            <label>
+              <input type="radio" name="filter" id="active" /><span
+                class="active-filter"
+                >Active</span
+              >
+            </label>
+
+            <label>
+              <input type="radio" name="filter" id="completed" />
+              <span class="completed-filter">Completed</span>
+            </label>
+          </div>
+          <p class="clear-todos">Clear Completed</p>
+        </div>
+        <!-- </div> -->
+      </div>
+
+      <div class="mobile-footer footer hidden">
+        <div class="filters">
+          <label>
+            <input type="radio" name="filter" id="all" checked /><span
+              class="all-filter"
+              >All</span
+            >
+          </label>
+
+          <label>
+            <input type="radio" name="filter" id="active" /><span
+              class="active-filter"
+              >Active</span
+            >
+          </label>
+
+          <label>
+            <input type="radio" name="filter" id="completed" />
+            <span class="completed-filter">Completed</span>
+          </label>
+        </div>
+      </div>
+
+      <p class="drag">drag and drop to reorder list</p>
+    </div>
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="https://x.com/mdaffan_codes">MdAffan</a>.
+    </div>
+  </body>
+</html>
