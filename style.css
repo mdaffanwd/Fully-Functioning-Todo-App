@@ -293,9 +293,11 @@ body.dark .attribution a {
 /* ======================= */
 /* ======================= */
 
-@media (350px < width < 750px) {
+
+
+@media (450px < width < 750px) {
   .main-container {
-    min-width: 80%;
+    min-width: 90%;
   }
   .background {
     background-image: url(images/bg-mobile-light.jpg);
